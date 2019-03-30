@@ -1,0 +1,10 @@
+# EEPROM protocols
+
+ExtraInput = Ignore;
+InTerminator = NL;
+OutTerminator = NL"*OPC?"NL;
+
+
+save { out "SET:SAVE";}
+
+get { out "SET:RESTORE";}

@@ -1,0 +1,230 @@
+# records for temperture data
+
+
+############################################################################3
+# Records responsible for getting current values of temperatures from VM1 to VM7
+#
+record(ai, $(USER):CavitySimulator:TempButtonVM){
+	field(SCAN, "Passive")
+	field(FLNK, "$(USER):CavitySimulator:TempVM1")
+}
+
+record(ai, $(USER):CavitySimulator:TempVM1){
+	field(DTYP, "stream")
+	field(INP, "@Temperature.proto getTemp(VM1,$(USER)) $(PORT)")
+	field(SCAN, "Passive")
+	field(PINI, "YES")
+	field(FLNK, "$(USER):CavitySimulator:TempVM1Result")
+}
+
+record(ai, $(USER):CavitySimulator:TempVM1Result){
+	field(SCAN, "Passive")
+	field(FLNK, "$(USER):CavitySimulator:TempVM2")
+	field(PREC, "3")
+	field(HOPR, "100")
+	field(LOPR, "0")
+}
+
+record(ai, $(USER):CavitySimulator:TempVM2){
+	field(DTYP, "stream")
+	field(INP, "@Temperature.proto getTemp(VM2,$(USER)) $(PORT)")
+	field(SCAN, "Passive")
+	field(PINI, "YES")
+	field(FLNK, "$(USER):CavitySimulator:TempVM2Result")
+}
+
+record(ai, $(USER):CavitySimulator:TempVM2Result){
+	field(SCAN, "Passive")
+	field(FLNK, "$(USER):CavitySimulator:TempVM3")
+	field(HOPR, "100")
+	field(LOPR, "0")
+	field(PREC, "3")
+}
+
+record(ai, $(USER):CavitySimulator:TempVM3){
+	field(DTYP, "stream")
+	field(INP, "@Temperature.proto getTemp(VM3,$(USER)) $(PORT)")
+	field(SCAN, "Passive")
+	field(PINI, "YES")
+	field(FLNK, "$(USER):CavitySimulator:TempVM3Result")
+}
+
+record(ai, $(USER):CavitySimulator:TempVM3Result){
+	field(SCAN, "Passive")
+	field(HOPR, "100")
+	field(LOPR, "0")
+	field(PREC, "3")
+	field(FLNK, "$(USER):CavitySimulator:TempVM4")
+}
+
+record(ai, $(USER):CavitySimulator:TempVM4){
+	field(DTYP, "stream")
+	field(INP, "@Temperature.proto getTemp(VM4,$(USER)) $(PORT)")
+	field(SCAN, "Passive")
+	field(PINI, "YES")
+	field(FLNK, "$(USER):CavitySimulator:TempVM4Result")
+}
+ 
+record(ai, $(USER):CavitySimulator:TempVM4Result){
+	field(SCAN, "Passive")
+	field(HOPR, "100")
+	field(LOPR, "0")
+	field(PREC, "3")
+	field(FLNK, "$(USER):CavitySimulator:TempVM5")
+}
+
+record(ai, $(USER):CavitySimulator:TempVM5){
+	field(DTYP, "stream")
+	field(INP, "@Temperature.proto getTemp(VM5,$(USER)) $(PORT)")
+	field(SCAN, "Passive")
+	field(PINI, "YES")
+	field(FLNK, "$(USER):CavitySimulator:TempVM5Result")
+}
+
+record(ai, $(USER):CavitySimulator:TempVM5Result){
+	field(SCAN, "Passive")
+	field(HOPR, "100")
+	field(LOPR, "0")
+	field(PREC, "3")
+	field(FLNK, "$(USER):CavitySimulator:TempVM6")
+}
+
+record(ai, $(USER):CavitySimulator:TempVM6){
+	field(DTYP, "stream")
+	field(INP, "@Temperature.proto getTemp(VM6,$(USER)) $(PORT)")
+	field(SCAN, "Passive")
+	field(PINI, "YES")
+	field(FLNK, "$(USER):CavitySimulator:TempVM6Result")
+}
+
+record(ai, $(USER):CavitySimulator:TempVM6Result){
+	field(SCAN, "Passive")
+	field(HOPR, "100")
+	field(LOPR, "0")
+	field(PREC, "3")
+	field(FLNK, "$(USER):CavitySimulator:TempVM7")
+}
+
+record(ai, $(USER):CavitySimulator:TempVM7){
+	field(DTYP, "stream")
+	field(INP, "@Temperature.proto getTemp(VM7,$(USER)) $(PORT)")
+	field(SCAN, "Passive")
+	field(PINI, "YES")
+	field(FLNK, "$(USER):CavitySimulator:TempVM7Result")
+}
+
+record(ai, $(USER):CavitySimulator:TempVM7Result){
+	field(SCAN, "Passive")
+	field(HOPR, "100")
+	field(LOPR, "0")
+	field(PREC, "3")
+}
+
+##################################################################
+# Records responsible for getting current values od temperatures of CLK, ADC, DWC, REFG
+
+record(ai, $(USER):CavitySimulator:TempButtonCLK){
+	field(SCAN, "Passive")
+	field(FLNK,"$(USER):CavitySimulator:TempCLK")
+}
+
+record(ai, $(USER):CavitySimulator:TempCLK){
+	field(DTYP, "stream")
+	field(INP, "@Temperature.proto getTemp(CLK,$(USER)) $(PORT)")
+	field(SCAN, "Passive")
+	field(PINI, "YES")
+	field(FLNK, "$(USER):CavitySimulator:TempCLKResult")
+}
+
+record(ai, $(USER):CavitySimulator:TempCLKResult){
+	field(SCAN, "Passive")
+	field(HOPR, "100")
+	field(LOPR, "0")
+	field(PREC, "3")
+	field(FLNK, "$(USER):CavitySimulator:TempADC")
+}
+
+record(ai, $(USER):CavitySimulator:TempADC){
+	field(DTYP, "stream")
+	field(INP, "@Temperature.proto getTemp(ADC,$(USER)) $(PORT)")
+	field(SCAN, "Passive")
+	field(PINI, "YES")
+	field(FLNK, "$(USER):CavitySimulator:TempADCResult")
+}
+
+record(ai, $(USER):CavitySimulator:TempADCResult){
+	field(SCAN, "Passive")
+	field(HOPR, "100")
+	field(LOPR, "0")
+	field(PREC, "3")
+	field(FLNK, "$(USER):CavitySimulator:TempDWC")
+}
+
+record(ai, $(USER):CavitySimulator:TempDWC){
+	field(DTYP, "stream")
+	field(INP, "@Temperature.proto getTemp(DWC,$(USER)) $(PORT)")
+	field(SCAN, "Passive")
+	field(PINI, "YES")
+	field(FLNK, "$(USER):CavitySimulator:TempDWCResult")
+}
+
+record(ai, $(USER):CavitySimulator:TempDWCResult){
+	field(SCAN, "Passive")
+	field(HOPR, "100")
+	field(LOPR, "0")
+	field(PREC, "3")
+	field(FLNK, "$(USER):CavitySimulator:TempREFG")
+}
+
+record(ai, $(USER):CavitySimulator:TempREFG){
+	field(DTYP, "stream")
+	field(INP, "@Temperature.proto getTemp(REFG,$(USER)) $(PORT)")
+	field(SCAN, "Passive")
+	field(PINI, "YES")
+	field(FLNK, "$(USER):CavitySimulator:TempREFGResult")
+}
+
+record(ai, $(USER):CavitySimulator:TempREFGResult){
+	field(SCAN, "Passive")
+	field(HOPR, "100")
+	field(LOPR, "0")
+	field(PREC, "3")
+}
+
+#####################################################################
+# Records responsible for current values of temperature of PS1 and PS2
+
+record(ai, $(USER):CavitySimulator:TempButtonPS){
+	field(SCAN, "Passive")
+	field(FLNK, "$(USER):CavitySimulator:TempPS1")
+}
+
+record(ai, $(USER):CavitySimulator:TempPS1){
+	field(DTYP, "stream")
+	field(INP, "@Temperature.proto getTemp(PS1,$(USER)) $(PORT)")	
+	field(SCAN, "Passive")
+	field(PINI, "YES")
+	field(FLNK, "$(USER):CavitySimulator:TempPS1Result")
+}
+
+record(ai, $(USER):CavitySimulator:TempPS1Result){
+	field(SCAN, "Passive")
+	field(HOPR, "100")
+	field(LOPR, "0")
+	field(PREC, "3")
+	field(FLNK, "$(USER):CavitySimulator:TempPS2")
+}
+record(ai, $(USER):CavitySimulator:TempPS2){
+	field(DTYP, "stream")
+	field(INP, "@Temperature.proto getTemp(PS2,$(USER)) $(PORT)")
+	field(SCAN, "Passive")
+	field(PINI, "YES")
+	field(FLNK, "$(USER):CavitySimulator:TempPS2Result")
+}
+
+record(ai, $(USER):CavitySimulator:TempPS2Result){
+	field(SCAN, "Passive")
+	field(HOPR, "100")
+	field(LOPR, "0")
+	field(PREC, "3")
+}

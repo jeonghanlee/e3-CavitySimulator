@@ -1,0 +1,401 @@
+# Status configuration
+
+
+#################################################################################
+# Records responsible for getting current Gate values
+#
+record(ai, $(USER):CavitySimulator:GateButton){
+	field(SCAN, "Passive")
+	field(FLNK, "$(USER):CavitySimulator:Gate1")
+}
+
+record(ai, $(USER):CavitySimulator:Gate1){
+	field(DTYP, "stream")
+	field(INP, "@Status.proto getGateResult(1,$(USER)) $(PORT)")
+	field(SCAN, "Passive")
+	field(PINI, "YES")
+	field(FLNK, "$(USER):CavitySimulator:Gate1Result")
+}
+
+record(ai, $(USER):CavitySimulator:Gate1Result){
+	field(SCAN, "Passive")
+	field(FLNK, "$(USER):CavitySimulator:Gate2")
+}
+
+record(ai, $(USER):CavitySimulator:Gate2){
+	field(DTYP, "stream")
+	field(INP, "@Status.proto getGateResult(2,$(USER)) $(PORT)")
+	field(SCAN, "Passive")
+	field(PINI, "YES")
+	field(FLNK, "$(USER):CavitySimulator:Gate2Result")
+}
+
+record(ai, $(USER):CavitySimulator:Gate2Result){
+	field(SCAN, "Passive")
+	field(FLNK, "$(USER):CavitySimulator:Gate3")
+}
+
+record(ai, $(USER):CavitySimulator:Gate3){
+	field(DTYP, "stream")
+	field(INP, "@Status.proto getGateResult(3,$(USER)) $(PORT)")
+	field(SCAN, "Passive")
+	field(PINI, "YES")
+	field(FLNK, "$(USER):CavitySimulator:Gate3Result")
+}
+
+record(ai, $(USER):CavitySimulator:Gate3Result){
+	field(SCAN, "Passive")
+	field(FLNK, "$(USER):CavitySimulator:Gate4")
+}
+
+record(ai, $(USER):CavitySimulator:Gate4){
+	field(DTYP, "stream")
+	field(INP, "@Status.proto getGateResult(4,$(USER)) $(PORT)")
+	field(SCAN, "Passive")
+	field(PINI, "YES")
+	field(FLNK, "$(USER):CavitySimulator:Gate4Result")
+}
+
+record(ai, $(USER):CavitySimulator:Gate4Result){
+	field(SCAN, "Passive")
+	field(FLNK, "$(USER):CavitySimulator:Gate5")
+}
+
+record(ai, $(USER):CavitySimulator:Gate5){
+	field(DTYP, "stream")
+	field(INP, "@Status.proto getGateResult(5,$(USER)) $(PORT)")
+	field(SCAN, "Passive")
+	field(PINI, "YES")
+	field(FLNK, "$(USER):CavitySimulator:Gate5Result")
+}
+
+record(ai, $(USER):CavitySimulator:Gate5Result){
+	field(SCAN, "Passive")
+	field(FLNK, "$(USER):CavitySimulator:Gate6")
+}
+
+record(ai, $(USER):CavitySimulator:Gate6){
+	field(DTYP, "stream")
+	field(INP, "@Status.proto getGateResult(6,$(USER)) $(PORT)")
+	field(SCAN, "Passive")
+	field(PINI, "YES")
+	field(FLNK, "$(USER):CavitySimulator:Gate6Result")
+}
+
+record(ai, $(USER):CavitySimulator:Gate6Result){
+	field(SCAN, "Passive")
+	field(FLNK, "$(USER):CavitySimulator:Gate7")
+}
+
+record(ai, $(USER):CavitySimulator:Gate7){
+	field(DTYP, "stream")
+	field(INP, "@Status.proto getGateResult(7,$(USER)) $(PORT)")
+	field(SCAN, "Passive")
+	field(PINI, "YES")
+	field(FLNK, "$(USER):CavitySimulator:Gate7Result")
+}
+
+record(ai, $(USER):CavitySimulator:Gate7Result){
+	field(SCAN, "Passive")
+}
+
+########################################################################
+# Records responsible for getting current Mux values
+
+record(ai, $(USER):CavitySimulator:MuxButton){
+	field(SCAN, "Passive")
+	field(FLNK, "$(USER):CavitySimulator:Mux1")
+}
+
+record(ai, $(USER):CavitySimulator:Mux1){
+	field(DTYP, "stream")
+	field(INP, "@Status.proto getMuxResult(1,$(USER)) $(PORT)")
+	field(SCAN, "Passive")
+	field(PINI, "YES")
+	field(FLNK, "$(USER):CavitySimulator:Mux1Result")
+}
+
+record(ai, $(USER):CavitySimulator:Mux1Result){
+	field(SCAN, "Passive")
+	field(FLNK, "$(USER):CavitySimulator:Mux2")
+}
+
+record(ai, $(USER):CavitySimulator:Mux2){
+	field(DTYP, "stream")
+	field(INP, "@Status.proto getMuxResult(2,$(USER)) $(PORT)")
+	field(SCAN, "Passive")
+	field(PINI, "YES")
+	field(FLNK, "$(USER):CavitySimulator:Mux2Result")
+}
+
+record(ai, $(USER):CavitySimulator:Mux2Result){
+	field(SCAN, "Passive")
+	field(FLNK, "$(USER):CavitySimulator:Mux3")
+}
+
+record(ai, $(USER):CavitySimulator:Mux3){
+	field(DTYP, "stream")
+	field(INP, "@Status.proto getMuxResult(3,$(USER)) $(PORT)")
+	field(SCAN, "Passive")
+	field(PINI, "YES")
+	field(FLNK, "$(USER):CavitySimulator:Mux3Result")
+}
+
+record(ai, $(USER):CavitySimulator:Mux3Result){
+	field(SCAN, "Passive")
+	field(FLNK, "$(USER):CavitySimulator:Mux4")
+}
+
+record(ai, $(USER):CavitySimulator:Mux4){
+	field(DTYP, "stream")
+	field(INP, "@Status.proto getMuxResult(4,$(USER)) $(PORT)")
+	field(SCAN, "Passive")
+	field(PINI, "YES")
+	field(FLNK, "$(USER):CavitySimulator:Mux4Result")
+}
+
+record(ai, $(USER):CavitySimulator:Mux4Result){
+	field(SCAN, "Passive")
+	field(FLNK, "$(USER):CavitySimulator:Mux5")
+}
+
+record(ai, $(USER):CavitySimulator:Mux5){
+	field(DTYP, "stream")
+	field(INP, "@Status.proto getMuxResult(5,$(USER)) $(PORT)")
+	field(SCAN, "Passive")
+	field(PINI, "YES")
+	field(FLNK, "$(USER):CavitySimulator:Mux5Result")
+}
+
+record(ai, $(USER):CavitySimulator:Mux5Result){
+	field(SCAN, "Passive")
+	field(FLNK, "$(USER):CavitySimulator:Mux6")
+}
+
+record(ai, $(USER):CavitySimulator:Mux6){
+	field(DTYP, "stream")
+	field(INP, "@Status.proto getMuxResult(6,$(USER)) $(PORT)")
+	field(SCAN, "Passive")
+	field(PINI, "YES")
+	field(FLNK, "$(USER):CavitySimulator:Mux6Result")
+}
+
+record(ai, $(USER):CavitySimulator:Mux6Result){
+	field(SCAN, "Passive")
+	field(FLNK, "$(USER):CavitySimulator:Mux7")
+}
+
+record(ai, $(USER):CavitySimulator:Mux7){
+	field(DTYP, "stream")
+	field(INP, "@Status.proto getMuxResult(7,$(USER)) $(PORT)")
+	field(SCAN, "Passive")
+	field(PINI, "YES")
+	field(FLNK, "$(USER):CavitySimulator:Mux7Result")
+}
+
+record(ai, $(USER):CavitySimulator:Mux7Result){
+	field(SCAN, "Passive")
+}
+
+#########################################################################3
+# Records responsible for setting Gate values
+
+record(ai, $(USER):CavitySimulator:GateButton1){
+	field(SCAN, "Passive")
+	field(DTYP, "stream")
+	field(PINI, "YES")
+	field(INP, "@Status.proto setGate(1,$(USER)) $(PORT)")
+	field(FLNK, "$(USER):CavitySimulator:Gate1")
+}
+
+record(ai, $(USER):CavitySimulator:GateButton2){
+	field(SCAN, "Passive")
+	field(DTYP, "stream")
+	field(PINI, "YES")
+	field(INP, "@Status.proto setGate(2,$(USER)) $(PORT)")
+	field(FLNK, "$(USER):CavitySimulator:Gate1")
+}
+
+record(ai, $(USER):CavitySimulator:GateButton3){
+	field(SCAN, "Passive")
+	field(DTYP, "stream")
+	field(PINI, "YES")
+	field(INP, "@Status.proto setGate(3,$(USER)) $(PORT)")
+	field(FLNK, "$(USER):CavitySimulator:Gate1")
+}
+
+record(ai, $(USER):CavitySimulator:GateButton4){
+	field(SCAN, "Passive")
+	field(DTYP, "stream")
+	field(PINI, "YES")
+	field(INP, "@Status.proto setGate(4,$(USER)) $(PORT)")
+	field(FLNK, "$(USER):CavitySimulator:Gate1")
+}
+
+record(ai, $(USER):CavitySimulator:GateButton5){
+	field(SCAN, "Passive")
+	field(DTYP, "stream")
+	field(PINI, "YES")
+	field(INP, "@Status.proto setGate(5,$(USER)) $(PORT)")
+	field(FLNK, "$(USER):CavitySimulator:Gate1")
+}
+
+record(ai, $(USER):CavitySimulator:GateButton6){
+	field(SCAN, "Passive")
+	field(DTYP, "stream")
+	field(PINI, "YES")
+	field(INP, "@Status.proto setGate(6,$(USER)) $(PORT)")
+	field(FLNK, "$(USER):CavitySimulator:Gate1")
+}
+
+record(ai, $(USER):CavitySimulator:GateButton7){
+	field(SCAN, "Passive")
+	field(DTYP, "stream")
+	field(PINI, "YES")
+	field(INP, "@Status.proto setGate(7,$(USER)) $(PORT)")
+	field(FLNK, "$(USER):CavitySimulator:Gate1")
+}
+
+######################################################################
+# Records responsible for setting Mux values
+
+record(mbbi, $(USER):CavitySimulator:EnumVM1){
+	field(ZRVL, "0")
+	field(ONVL, "1")
+	field(TWVL, "2")
+	field(THVL, "3")
+	field(ZRST, "Model")
+	field(ONST, "CONST")
+	field(TWST, "AWG")
+	field(THST, "O")
+	field(FLNK, "$(USER):CavitySimulator:EnumSend1")
+	field(PINI, "YES")
+}
+
+record(ai, $(USER):CavitySimulator:EnumSend1){
+	field(SCAN, "Passive")
+	field(DTYP, "stream")
+	field(INP, "@Status.proto EnumSend(1,$(USER)) $(PORT)")
+	field(FLNK, "$(USER):CavitySimulator:Mux1")
+}
+
+record(mbbi, $(USER):CavitySimulator:EnumVM2){
+	field(ZRVL, "0")
+	field(ONVL, "1")
+	field(TWVL, "2")
+	field(THVL, "3")
+	field(ZRST, "Model")
+	field(ONST, "CONST")
+	field(TWST, "AWG")
+	field(THST, "O")
+	field(FLNK, "$(USER):CavitySimulator:EnumSend2")
+	field(PINI, "YES")
+}
+
+record(ai, $(USER):CavitySimulator:EnumSend2){
+	field(SCAN, "Passive")
+	field(DTYP, "stream")
+	field(INP, "@Status.proto EnumSend(2,$(USER)) $(PORT)")
+	field(FLNK, "$(USER):CavitySimulator:Mux1")
+}
+
+record(mbbi, $(USER):CavitySimulator:EnumVM3){
+	field(ZRVL, "0")
+	field(ONVL, "1")
+	field(TWVL, "2")
+	field(THVL, "3")
+	field(ZRST, "Model")
+	field(ONST, "CONST")
+	field(TWST, "AWG")
+	field(THST, "O")
+	field(FLNK, "$(USER):CavitySimulator:EnumSend3")
+	field(PINI, "YES")
+}
+
+record(ai, $(USER):CavitySimulator:EnumSend3){
+	field(SCAN, "Passive")
+	field(DTYP, "stream")
+	field(INP, "@Status.proto EnumSend(3,$(USER)) $(PORT)")
+	field(FLNK, "$(USER):CavitySimulator:Mux1")
+}
+
+record(mbbi, $(USER):CavitySimulator:EnumVM4){
+	field(ZRVL, "0")
+	field(ONVL, "1")
+	field(TWVL, "2")
+	field(THVL, "3")
+	field(ZRST, "Model")
+	field(ONST, "CONST")
+	field(TWST, "AWG")
+	field(THST, "O")
+	field(FLNK, "$(USER):CavitySimulator:EnumSend4")
+	field(PINI, "YES")
+}
+
+record(ai, $(USER):CavitySimulator:EnumSend4){
+	field(SCAN, "Passive")
+	field(DTYP, "stream")
+	field(INP, "@Status.proto EnumSend(4,$(USER)) $(PORT)")
+	field(FLNK, "$(USER):CavitySimulator:Mux1")
+}
+
+record(mbbi, $(USER):CavitySimulator:EnumVM5){
+	field(ZRVL, "0")
+	field(ONVL, "1")
+	field(TWVL, "2")
+	field(THVL, "3")
+	field(ZRST, "Model")
+	field(ONST, "CONST")
+	field(TWST, "AWG")
+	field(THST, "O")
+	field(FLNK, "$(USER):CavitySimulator:EnumSend5")
+	field(PINI, "YES")
+}
+
+record(ai, $(USER):CavitySimulator:EnumSend5){
+	field(SCAN, "Passive")
+	field(DTYP, "stream")
+	field(INP, "@Status.proto EnumSend(5,$(USER)) $(PORT)")
+	field(FLNK, "$(USER):CavitySimulator:Mux1")
+}
+
+record(mbbi, $(USER):CavitySimulator:EnumVM6){
+	field(ZRVL, "0")
+	field(ONVL, "1")
+	field(TWVL, "2")
+	field(THVL, "3")
+	field(ZRST, "Model")
+	field(ONST, "CONST")
+	field(TWST, "AWG")
+	field(THST, "O")
+	field(FLNK, "$(USER):CavitySimulator:EnumSend6")
+	field(PINI, "YES")
+}
+
+record(ai, $(USER):CavitySimulator:EnumSend6){
+	field(SCAN, "Passive")
+	field(DTYP, "stream")
+	field(INP, "@Status.proto EnumSend(6,$(USER)) $(PORT)")
+	field(FLNK, "$(USER):CavitySimulator:Mux1")
+}
+
+record(mbbi, $(USER):CavitySimulator:EnumVM7){
+	field(ZRVL, "0")
+	field(ONVL, "1")
+	field(TWVL, "2")
+	field(THVL, "3")
+	field(ZRST, "Model")
+	field(ONST, "CONST")
+	field(TWST, "AWG")
+	field(THST, "O")
+	field(FLNK, "$(USER):CavitySimulator:EnumSend7")
+	field(PINI, "YES")
+}
+
+record(ai, $(USER):CavitySimulator:EnumSend7){
+	field(SCAN, "Passive")
+	field(DTYP, "stream")
+	field(INP, "@Status.proto EnumSend(7,$(USER)) $(PORT)")
+	field(FLNK, "$(USER):CavitySimulator:Mux1")
+}
+

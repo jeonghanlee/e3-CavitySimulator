@@ -1,0 +1,371 @@
+# Model configuration records
+
+##################################################################################
+# Records responsible for getting current values of model
+
+record(ai, $(USER):CavitySimulator:ModelButton){
+	field(SCAN, "Passive")
+	field(FLNK, "$(USER):CavitySimulator:Gain1")
+}
+
+record(ai, $(USER):CavitySimulator:Gain1){
+	field(DTYP, "stream")
+	field(INP, "@Model.proto getGain(1,$(USER)) $(PORT)")
+	field(SCAN, "Passive")
+	field(PINI, "YES")
+	field(FLNK, "$(USER):CavitySimulator:Gain1Result")
+}
+
+record(ai, $(USER):CavitySimulator:Gain1Result){
+	field(SCAN, "Passive")
+	field(FLNK, "$(USER):CavitySimulator:Detu1")
+}
+
+record(ai, $(USER):CavitySimulator:Detu1){
+	field(DTYP, "stream")
+	field(INP, "@Model.proto getDetu(1,$(USER)) $(PORT)")
+	field(SCAN, "Passive")
+	field(PINI, "YES")
+	field(FLNK,"$(USER):CavitySimulator:Detu1Result")
+}
+
+record(ai, $(USER):CavitySimulator:Detu1Result){
+	field(SCAN, "Passive")
+	field(FLNK, "$(USER):CavitySimulator:Q1")
+}
+
+record(ai, $(USER):CavitySimulator:Q1){
+	field(DTYP, "stream")
+	field(INP, "@Model.proto getQ(1,$(USER)) $(PORT)")
+	field(SCAN, "Passive")
+	field(PINI, "YES")
+	field(FLNK, "$(USER):CavitySimulator:Q1Result")
+}
+
+record(ai, $(USER):CavitySimulator:Q1Result){
+	field(SCAN, "Passive")
+	field(FLNK, "$(USER):CavitySimulator:Gain2")
+}
+
+record(ai, $(USER):CavitySimulator:Gain2){
+	field(DTYP, "stream")
+	field(INP, "@Model.proto getGain(2,$(USER)) $(PORT)")
+	field(SCAN, "Passive")
+	field(PINI, "YES")
+	field(FLNK, "$(USER):CavitySimulator:Gain2Result")
+}
+
+record(ai, $(USER):CavitySimulator:Gain2Result){
+	field(SCAN, "Passive")
+	field(FLNK, "$(USER):CavitySimulator:Detu2")
+}
+
+record(ai, $(USER):CavitySimulator:Detu2){
+	field(DTYP, "stream")
+	field(INP, "@Model.proto getDetu(2,$(USER)) $(PORT)")
+	field(SCAN, "Passive")
+	field(PINI, "YES")
+	field(FLNK, "$(USER):CavitySimulator:Detu2Result")
+}
+
+record(ai, $(USER):CavitySimulator:Detu2Result){
+	field(SCAN, "Passive")
+	field(FLNK, "$(USER):CavitySimulator:Q2")
+}
+
+record(ai, $(USER):CavitySimulator:Q2){
+	field(DTYP, "stream")
+	field(INP, "@Model.proto getQ(2,$(USER)) $(PORT)")
+	field(SCAN, "Passive")
+	field(PINI, "YES")
+	field(FLNK, "$(USER):CavitySimulator:Q2Result")
+}
+
+record(ai, $(USER):CavitySimulator:Q2Result){
+	field(SCAN, "Passive")
+	field(FLNK, "$(USER):CavitySimulator:Gain3")
+}
+
+record(ai, $(USER):CavitySimulator:Gain3){
+	field(DTYP, "stream")
+	field(INP, "@Model.proto getGain(3,$(USER)) $(PORT)")
+	field(SCAN, "Passive")
+	field(PINI, "YES")
+	field(FLNK, "$(USER):CavitySimulator:Gain3Result")
+}
+
+record(ai, $(USER):CavitySimulator:Gain3Result){
+	field(SCAN, "Passive")
+	field(FLNK, "$(USER):CavitySimulator:Detu3")
+}
+
+record(ai, $(USER):CavitySimulator:Detu3){
+	field(DTYP, "stream")
+	field(INP, "@Model.proto getDetu(3,$(USER)) $(PORT)")
+	field(SCAN, "Passive")
+	field(PINI, "YES")
+	field(FLNK, "$(USER):CavitySimulator:Detu3Result")
+}
+
+record(ai, $(USER):CavitySimulator:Detu3Result){
+	field(SCAN, "Passive")
+	field(FLNK, "$(USER):CavitySimulator:Q3")
+}
+
+record(ai, $(USER):CavitySimulator:Q3){
+	field(DTYP, "stream")
+	field(INP, "@Model.proto getQ(3,$(USER)) $(PORT)")
+	field(SCAN, "Passive")
+	field(PINI, "YES")
+	field(FLNK, "$(USER):CavitySimulator:Q3Result")
+}
+
+record(ai, $(USER):CavitySimulator:Q3Result){
+	field(SCAN, "Passive")
+	field(FLNK, "$(USER):CavitySimulator:Gain4")
+}
+
+record(ai, $(USER):CavitySimulator:Gain4){
+	field(DTYP, "stream")
+	field(INP, "@Model.proto getGain(4,$(USER)) $(PORT)")
+	field(SCAN, "Passive")
+	field(FLNK, "$(USER):CavitySimulator:Gain4Result")
+	field(PINI, "YES")
+}
+
+record(ai, $(USER):CavitySimulator:Gain4Result){
+	field(SCAN, "Passive")
+	field(FLNK, "$(USER):CavitySimulator:Detu4")
+}
+
+record(ai, $(USER):CavitySimulator:Detu4){
+	field(DTYP, "stream")
+	field(INP, "@Model.proto getDetu(4,$(USER)) $(PORT)")
+	field(SCAN, "Passive")
+	field(FLNK, "$(USER):CavitySimulator:Detu4Result")
+	field(PINI, "YES")
+}
+
+record(ai, $(USER):CavitySimulator:Detu4Result){
+	field(SCAN, "Passive")
+	field(FLNK, "$(USER):CavitySimulator:Q4")
+}
+record(ai, $(USER):CavitySimulator:Q4){
+	field(DTYP, "stream")
+	field(INP, "@Model.proto getQ(4,$(USER)) $(PORT)")
+	field(SCAN, "Passive")
+	field(FLNK, "$(USER):CavitySimulator:Q4Result")
+	field(PINI, "YES")
+}
+
+record(ai, $(USER):CavitySimulator:Q4Result){
+	field(SCAN, "Passive")
+	field(FLNK, "$(USER):CavitySimulator:Gain5")
+}
+
+record(ai, $(USER):CavitySimulator:Gain5){
+	field(DTYP, "stream")
+	field(INP, "@Model.proto getGain(5,$(USER)) $(PORT)")
+	field(SCAN, "Passive")
+	field(FLNK, "$(USER):CavitySimulator:Gain5Result")
+	field(PINI, "YES")
+}
+
+record(ai, $(USER):CavitySimulator:Gain5Result){
+	field(SCAN, "Passive")
+	field(FLNK, "$(USER):CavitySimulator:Detu5")
+}
+
+record(ai, $(USER):CavitySimulator:Detu5){
+	field(DTYP, "stream")
+	field(INP, "@Model.proto getDetu(5,$(USER)) $(PORT)")
+	field(SCAN, "Passive")
+	field(FLNK, "$(USER):CavitySimulator:Detu5Result")
+	field(PINI, "YES")
+}
+
+record(ai, $(USER):CavitySimulator:Detu5Result){
+	field(SCAN, "Passive")
+	field(FLNK, "$(USER):CavitySimulator:Q5")
+}
+
+record(ai, $(USER):CavitySimulator:Q5){
+	field(DTYP, "stream")
+	field(INP, "@Model.proto getQ(5,$(USER)) $(PORT)")
+	field(SCAN, "Passive")
+	field(FLNK, "$(USER):CavitySimulator:Q5Result")
+	field(PINI, "YES")
+}
+
+record(ai, $(USER):CavitySimulator:Q5Result){
+	field(SCAN, "Passive")
+	field(FLNK, "$(USER):CavitySimulator:Gain6")
+}
+
+record(ai, $(USER):CavitySimulator:Gain6){
+	field(DTYP, "stream")
+	field(INP, "@Model.proto getGain(6,$(USER)) $(PORT)")
+	field(SCAN, "Passive")
+	field(PINI, "YES")
+	field(FLNK, "$(USER):CavitySimulator:Gain6Result")
+}
+
+record(ai, $(USER):CavitySimulator:Gain6Result){
+	field(SCAN, "Passive")
+	field(FLNK, "$(USER):CavitySimulator:Detu6")
+}
+
+record(ai, $(USER):CavitySimulator:Detu6){
+	field(DTYP, "stream")
+	field(INP, "@Model.proto getDetu(6,$(USER)) $(PORT)")
+	field(SCAN, "Passive")
+	field(FLNK, "$(USER):CavitySimulator:Detu6Result")
+	field(PINI, "YES")
+}
+
+record(ai, $(USER):CavitySimulator:Detu6Result){
+	field(SCAN, "Passive")
+	field(FLNK, "$(USER):CavitySimulator:Q6")
+}
+
+record(ai, $(USER):CavitySimulator:Q6){
+	field(DTYP, "stream")
+	field(INP, "@Model.proto getQ(6,$(USER)) $(PORT)")
+	field(SCAN, "Passive")
+	field(PINI, "YES")
+	field(FLNK, "$(USER):CavitySimulator:Q6Result")
+}
+
+record(ai, $(USER):CavitySimulator:Q6Result){
+	field(SCAN, "Passive")
+}
+
+####################################################################################
+# records responsible for sending values of Gain, Detunning, Q
+
+record(ai, $(USER):CavitySimulator:setGain1){
+	field(DTYP, "stream")
+	field(INP, "@Model.proto setGain(1,$(USER)) $(PORT)")
+	field(SCAN, "Passive")
+	field(FLNK, "$(USER):CavitySimulator:Gain1")
+}
+
+record(ai, $(USER):CavitySimulator:setDetu1){
+	field(DTYP, "stream")
+	field(INP, "@Model.proto setDetu(1,$(USER)) $(PORT)")
+	field(SCAN, "Passive")
+	field(FLNK, "$(USER):CavitySimulator:Gain1")
+}
+
+record(ai, $(USER):CavitySimulator:setQ1){
+	field(DTYP, "stream")
+	field(INP, "@Model.proto setQ(1,$(USER)) $(PORT)")
+	field(SCAN, "Passive")
+	field(FLNK, "$(USER):CavitySimulator:Gain1")
+}
+
+record(ai, $(USER):CavitySimulator:setGain2){
+	field(DTYP, "stream")
+	field(INP, "@Model.proto setGain(2,$(USER)) $(PORT)")
+	field(SCAN, "Passive")
+	field(FLNK, "$(USER):CavitySimulator:Gain1")
+}
+
+record(ai, $(USER):CavitySimulator:setDetu2){
+	field(DTYP, "stream")
+	field(INP, "@Model.proto setDetu(2,$(USER)) $(PORT)")
+	field(SCAN, "Passive")
+	field(FLNK, "$(USER):CavitySimulator:Gain1")
+}
+
+record(ai, $(USER):CavitySimulator:setQ2){
+	field(DTYP, "stream")
+	field(INP, "@Model.proto setQ(2,$(USER)) $(PORT)")
+	field(SCAN, "Passive")
+	field(FLNK, "$(USER):CavitySimulator:Gain1")
+}
+
+record(ai, $(USER):CavitySimulator:setGain3){
+	field(DTYP, "stream")
+	field(INP, "@Model.proto setGain(3,$(USER)) $(PORT)")
+	field(SCAN, "Passive")
+	field(FLNK, "$(USER):CavitySimulator:Gain1")
+}
+
+record(ai, $(USER):CavitySimulator:setDetu3){
+	field(DTYP, "stream")
+	field(INP, "@Model.proto setDetu(3,$(USER)) $(PORT)")
+	field(SCAN, "Passive")
+	field(FLNK, "$(USER):CavitySimulator:Gain1")
+}
+
+record(ai, $(USER):CavitySimulator:setQ3){
+	field(DTYP, "stream")
+	field(INP, "@Model.proto setQ(3,$(USER)) $(PORT)")
+	field(SCAN, "Passive")
+	field(FLNK, "$(USER):CavitySimulator:Gain1")
+}
+
+record(ai, $(USER):CavitySimulator:setGain4){
+	field(DTYP, "stream")
+	field(INP, "@Model.proto setGain(4,$(USER)) $(PORT)")
+	field(SCAN, "Passive")
+	field(FLNK, "$(USER):CavitySimulator:Gain1")
+}
+
+record(ai, $(USER):CavitySimulator:setDetu4){
+	field(DTYP, "stream")
+	field(INP, "@Model.proto setDetu(4,$(USER)) $(PORT)")
+	field(SCAN, "Passive")
+	field(FLNK, "$(USER):CavitySimulator:Gain1")
+}
+
+record(ai, $(USER):CavitySimulator:setQ4){
+	field(DTYP, "stream")
+	field(INP, "@Model.proto setQ(4,$(USER)) $(PORT)")
+	field(SCAN, "Passive")
+	field(FLNK, "$(USER):CavitySimulator:Gain1")
+}
+
+record(ai, $(USER):CavitySimulator:setGain5){
+	field(DTYP, "stream")
+	field(INP, "@Model.proto setGain(5,$(USER)) $(PORT)")
+	field(SCAN, "Passive")
+	field(FLNK, "$(USER):CavitySimulator:Gain1")
+}
+
+record(ai, $(USER):CavitySimulator:setDetu5){
+	field(DTYP, "stream")
+	field(INP, "@Model.proto setDetu(5,$(USER)) $(PORT)")
+	field(SCAN, "Passive")
+	field(FLNK, "$(USER):CavitySimulator:Gain1")
+}
+
+record(ai, $(USER):CavitySimulator:setQ5){
+	field(DTYP, "stream")
+	field(INP, "@Model.proto setQ(5,$(USER)) $(PORT)")
+	field(SCAN, "Passive")
+	field(FLNK, "$(USER):CavitySimulator:Gain1")
+}
+
+record(ai, $(USER):CavitySimulator:setGain6){
+	field(DTYP, "stream")
+	field(INP, "@Model.proto setGain(6,$(USER)) $(PORT)")
+	field(SCAN, "Passive")
+	field(FLNK, "$(USER):CavitySimulator:Gain1")
+}
+
+record(ai, $(USER):CavitySimulator:setDetu6){
+	field(DTYP, "stream")
+	field(INP, "@Model.proto setDetu(6,$(USER)) $(PORT)")
+	field(SCAN, "Passive")
+	field(FLNK, "$(USER):CavitySimulator:Gain1")
+}
+
+record(ai, $(USER):CavitySimulator:setQ6){
+	field(DTYP, "stream")
+	field(INP, "@Model.proto setQ(6,$(USER)) $(PORT)")
+	field(SCAN, "Passive")
+	field(FLNK, "$(USER):CavitySimulator:Gain1")
+}
+

@@ -1,0 +1,15 @@
+# Protocols for expert window
+
+ExtraInput = Ignore;
+
+InTerminator = NL;
+OutTerminator = NL "*OPC?" NL;
+
+
+ExpertSendQ{ out "%(\$1:CavitySimulator:StringToSendQ.VAL)s"; in "%(\$1:CavitySimulator:ExpertSetAns)i";}
+
+ExpertSend{ out "%(\$1:CavitySimulator:StringToSend.VAL)s";}
+
+ExpertTempSend { out "%(\$1:CavitySimulator:StringToSendTemp.VAL)s"; in "%(\$1:CavitySimulator:ExpertTempAns)f";}
+
+ExpertIDNSend { out "%(\$1:CavitySimulator:StringToSendIDN.VAL)s"; in "%(\$1:CavitySimulator:Message_IDN.VAL)38c";}

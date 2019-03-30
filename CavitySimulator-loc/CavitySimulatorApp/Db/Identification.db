@@ -1,0 +1,27 @@
+# Identification records
+
+
+record(stringin, $(USER):CavitySimulator:Iden){
+	field(DTYP, "stream")
+	field(INP, "@Identification.proto IdenResult($(USER)) $(PORT)")
+	field(SCAN, "Passive")
+	field(PINI, "YES")
+	field(FLNK, "$(USER):CavitySimulator:IdenResult")
+}
+
+record(ai, $(USER):CavitySimulator:SoftVerButton){
+	field(SCAN, "Passive")
+	field(FLNK, "$(USER):CavitySimulator:Iden")
+}
+
+record(stringin, $(USER):CavitySimulator:SoftVer){
+	field(DTYP, "stream")
+	field(INP, "@Identification.proto SoftVer $(PORT)")
+	field(SCAN, "Passive")
+}
+
+record(stringin, $(USER):CavitySimulator:IdenResult){
+	field(SCAN, "Passive")
+	field(FLNK, "$(USER):CavitySimulator:SoftVer $(PORT)")
+}
+

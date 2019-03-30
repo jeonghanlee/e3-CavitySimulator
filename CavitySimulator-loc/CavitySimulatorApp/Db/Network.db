@@ -1,0 +1,106 @@
+# Network configuration
+
+############################################################################
+#Records responsible for getting current Network values
+
+record(ai, $(USER):CavitySimulator:NetButton){
+	field(SCAN, "Passive")
+	field(FLNK, "$(USER):CavitySimulator:IP")
+}
+
+record(stringin, $(USER):CavitySimulator:IP){
+	field(DTYP, "stream")
+	field(INP, "@Network.proto getIP($(USER)) $(PORT)")
+	field(SCAN, "Passive")
+	field(PINI, "YES")
+	field(FLNK, "$(USER):CavitySimulator:IPResult")
+}
+
+record(stringin, $(USER):CavitySimulator:IPResult){
+	field(SCAN, "Passive")
+	field(FLNK, "$(USER):CavitySimulator:Gate")
+}
+
+record(stringin, $(USER):CavitySimulator:Gate){
+	field(DTYP, "stream")
+	field(INP, "@Network.proto getGate($(USER)) $(PORT)")
+	field(SCAN, "Passive")
+	field(PINI, "YES")
+	field(FLNK, "$(USER):CavitySimulator:GateResult")
+}
+
+record(stringin, $(USER):CavitySimulator:GateResult){
+	field(SCAN, "Passive")
+	field(FLNK, "$(USER):CavitySimulator:Mask")
+}
+
+record(stringin, $(USER):CavitySimulator:Mask){
+	field(DTYP, "stream")
+	field(INP, "@Network.proto getMask($(USER)) $(PORT)")
+	field(SCAN, "Passive")
+	field(PINI, "YES")
+	field(FLNK, "$(USER):CavitySimulator:MaskResult")
+}
+
+record(stringin, $(USER):CavitySimulator:MaskResult){
+	field(SCAN, "Passive")
+	field(FLNK, "$(USER):CavitySimulator:Port")
+}
+
+record(ai, $(USER):CavitySimulator:Port){
+	field(DTYP, "stream")
+	field(INP, "@Network.proto getPort($(USER)) $(PORT)")
+	field(SCAN, "Passive")
+	field(PINI, "YES")
+	field(FLNK, "$(USER):CavitySimulator:PortResult")
+}
+
+record(ai, $(USER):CavitySimulator:PortResult){
+	field(SCAN, "Passive")
+	field(FLNK, "$(USER):CavitySimulator:DHCP")
+}
+
+record(ai, $(USER):CavitySimulator:DHCP){
+	field(DTYP, "stream")
+	field(INP, "@Network.proto getDHCP($(USER)) $(PORT)")
+	field(SCAN, "Passive")
+	field(PINI, "YES")
+	field(FLNK, "$(USER):CavitySimulator:DHCPResult")
+}
+
+record(ai, $(USER):CavitySimulator:DHCPResult){
+	field(SCAN, "Passive")
+}
+
+##################################################################################3
+# Records responsible for setting Network values
+	
+record(stringout, $(USER):CavitySimulator:setIP){
+	field(DTYP, "stream")
+	field(OUT, "@Network.proto setIP($(USER)) $(PORT)")
+	field(SCAN, "Passive")
+}
+
+record(stringout, $(USER):CavitySimulator:setMask){
+	field(DTYP, "stream")
+	field(OUT, "@Network.proto setMask($(USER)) $(PORT)")
+	field(SCAN, "Passive")
+}
+
+record(stringout, $(USER):CavitySimulator:setGate){
+	field(DTYP, "stream")
+	field(OUT, "@Network.proto setGate($(USER)) $(PORT)")
+	field(SCAN, "Passive")
+}
+
+record(ao, $(USER):CavitySimulator:setPort){
+	field(DTYP, "stream")
+	field(OUT, "@Network.proto setPort($(USER)) $(PORT)")
+	field(SCAN, "Passive")
+}
+
+record(ao, $(USER):CavitySimulator:setDHCP){
+	field(DTYP, "stream")
+	field(OUT, "@Network.proto setDHCP($(USER)) $(PORT)")
+	field(SCAN, "Passive")
+}

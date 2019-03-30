@@ -1,0 +1,109 @@
+# Expert records
+
+##########################################################################
+# Records for IDN and OPC
+
+record(stringin, $(USER):CavitySimulator:IDN_OPC){
+	field(SCAN, "Passive")
+}
+
+record(stringin, $(USER):CavitySimulator:Message_IDN){
+	field(SCAN, "Passive")
+}
+
+record(stringin, $(USER):CavitySimulator:StringToSendIDN){
+	field(SCAN, "Passive")
+	field(DTYP, "stream")
+	field(INP, "@Expert.proto ExpertIDNSend($(USER)) $(PORT)")
+}
+
+record(stringin, $(USER):CavitySimulator:StringToSendIDN){
+	field(SCAN, "Passive")
+	field(DTYP, "stream")
+	field(INP, "@Expert.proto ExpertIDNSend($(USER)) $(PORT)")
+}
+
+record(ai, $(USER):CavitySimulator:ExpertIDNButton){
+	field(SCAN, "Passive")
+}
+
+##########################################################################
+# Records for Temperature commands
+
+record(stringin, $(USER):CavitySimulator:ExpertTemp){
+	field(SCAN, "Passive")
+}
+
+record(ai, $(USER):CavitySimulator:ExpertTempAns){
+	field(SCAN, "Passive")
+	field(PREC, "3")
+	field(PINI, "YES")
+}
+
+record(stringin, $(USER):CavitySimulator:Meas){
+	field(SCAN, "Passive")
+}
+
+record(stringin, $(USER):CavitySimulator:Temp){
+	field(SCAN, "Passive")
+}
+
+record(stringin, $(USER):CavitySimulator:StringToSendTemp){
+	field(SCAN, "Passive")
+	field(DTYP, "stream")
+	field(INP, "@Expert.proto ExpertTempSend($(USER)) $(PORT)")
+}
+
+record(ai, $(USER):CavitySimulator:ExpertTempButton){
+	field(SCAN, "Passive")
+}
+
+##########################################################################
+#Records for Set commands
+
+record(stringin, $(USER):CavitySimulator:SET){
+	field(SCAN, "Passive")
+}
+
+record(stringin, $(USER):CavitySimulator:LVL2){
+	field(SCAN, "Passive")
+}
+
+record(stringin, $(USER):CavitySimulator:LVL3){
+	field(SCAN, "Passive")
+}	
+
+record(stringin, $(USER):CavitySimulator:LVL4){
+	field(SCAN, "Passive")
+}
+
+record(ai, $(USER):CavitySimulator:ExpertSetAns){
+	field(SCAN, "Passive")
+}
+
+record(ai, $(USER):CavitySimulator:ExpertSetButton){
+	field(SCAN, "Passive")
+}
+
+record(stringin, $(USER):CavitySimulator:StringToSend){
+	field(SCAN, "Passive")
+	field(FLNK, "$(USER):CavitySimulator:ExpertSend")
+}
+
+record(stringin, $(USER):CavitySimulator:StringToSendQ){
+	field(SCAN, "Passive")
+	field(FLNK, "$(USER):CavitySimulator:ExpertSendQ")
+}
+
+record(stringin, $(USER):CavitySimulator:ExpertSendQ){
+	field(DTYP, "stream")
+	field(INP, "@Expert.proto ExpertSendQ($(USER)) $(PORT)")
+	field(SCAN, "Passive")
+}
+
+record(stringin, $(USER):CavitySimulator:ExpertSend){
+	field(DTYP, "stream")
+	field(INP, "@Expert.proto ExpertSend($(USER)) $(PORT)")
+	field(SCAN, "Passive")
+}
+

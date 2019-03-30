@@ -49,12 +49,12 @@ include $(E3_REQUIRE_CONFIG)/DECOUPLE_FLAGS
 ##EXCLUDE_ARCHS = linux-ppc64e6500
 
 
-# APP:=calcApp
-# APPDB:=$(APP)/Db
-# APPSRC:=$(APP)/src
+ APP:=CavitySimulatorApp
+ APPDB:=$(APP)/Db
+ APPSRC:=$(APP)/src
 
 
-# USR_INCLUDES += -I$(where_am_I)$(APPSRC)
+ USR_INCLUDES += -I$(where_am_I)$(APPSRC)
 
 # USR_CFLAGS   += -Wno-unused-variable
 # USR_CFLAGS   += -Wno-unused-function
@@ -64,7 +64,15 @@ include $(E3_REQUIRE_CONFIG)/DECOUPLE_FLAGS
 # USR_CPPFLAGS += -Wno-unused-but-set-variable
 
 # TEMPLATES += $(wildcard $(APPDB)/*.db)
-# TEMPLATES += $(wildcard $(APPDB)/*.db)
+ TEMPLATES += $(wildcard $(APPDB)/Calibration.db)
+ TEMPLATES += $(wildcard $(APPDB)/Expert.db)
+ TEMPLATES += $(wildcard $(APPDB)/EEPROM.db)
+ TEMPLATES += $(wildcard $(APPDB)/Network.db)
+ TEMPLATES += $(wildcard $(APPDB)/Status.db)
+ TEMPLATES += $(wildcard $(APPDB)/Identification.db)
+ TEMPLATES += $(wildcard $(APPDB)/Temperature.db)
+ TEMPLATES += $(wildcard $(APPDB)/Model.db)
+
 # TEMPLATES += $(wildcard $(APPDB)/*.proto)
 # TEMPLATES += $(wildcard $(APPDB)/*.template)
 

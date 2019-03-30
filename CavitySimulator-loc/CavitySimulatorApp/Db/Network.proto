@@ -1,0 +1,31 @@
+# Network protocols
+
+ExtraInput = Ignore;
+InTerminator = NL;
+OutTerminator = NL"*OPC?" NL;
+
+############################################################################################
+# Protocols for getting values
+
+getIP { out "SET:NET:IP?"; in "%(\$1:CavitySimulator:IPResult.VAL)s";}
+
+getGate { out "SET:NET:NGATE?"; in "%(\$1:CavitySimulator:GateResult.VAL)s";}
+
+getMask { out "SET:NET:MASK?"; in "%(\$1:CavitySimulator:MaskResult.VAL)s";}
+
+getPort { out "SET:NET:PORT?"; in "%(\$1:CavitySimulator:PortResult.VAL)i";}
+
+getDHCP { out "SET:NET:DHCP?"; in "%(\$1:CavitySimulator:DHCPResult.VAL)i";}
+
+###########################################################################################
+# Protocoles for sending values
+
+setIP { out "SET:NET:IP %(\$1:CavitySimulator:IP.VAL)s";}
+
+setGate { out "SET:NET:NGATE %(\$1:CavitySimulator:Gate.VAL)s";}
+
+setMask { out "SET:NET:MASK %(\$1:CavitySimulator:Mask.VAL)s";}
+
+setPort { out "SET:NET:PORT %(\$1:CavitySimulator:Port.VAL)i";}
+
+setDHCP { out "SET:NET:DHCP %(\$1:CavitySimulator:DHCP.VAL)i";}

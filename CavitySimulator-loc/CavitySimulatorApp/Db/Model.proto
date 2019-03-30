@@ -1,0 +1,24 @@
+ExtraInput = Ignore;
+InTerminator = NL;
+OutTerminator = NL"*OPC?" NL;
+
+
+#########################################################################################
+# Protocoles for getting values
+
+getGain { out "SET:MOD\$1:GAIN?"; in "%(\$2:CavitySimulator:Gain\$1Result.VAL)i";}
+
+getDetu { out "SET:MOD\$1:DETU?"; in "%(\$2:CavitySimulator:Detu\$1Result.VAL)i";}
+
+getQ { out "SET:MOD\$1:Q?"; in "%(\$2:CavitySimulator:Q\$1Result.VAL)i";}
+
+
+#########################################################################################
+# Protocols for sending values
+
+setGain { out "SET:MOD\$1:GAIN %(\$2:CavitySimulator:setGain\$1.VAL)i";}
+
+setQ { out "SET:MOD\$1:Q %(\$2:CavitySimulator:setQ\$1.VAL)i";}
+
+setDetu { out "SET:MOD\$1:DETU %(\$2:CavitySimulator:setDetu\$1.VAL)i";}
+

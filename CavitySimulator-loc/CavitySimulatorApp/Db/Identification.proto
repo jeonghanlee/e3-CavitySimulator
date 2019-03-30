@@ -1,0 +1,21 @@
+# Identification protocols
+
+ExtraInput = Ignore;
+InTerminator = NL;
+OutTerminator = NL"*OPC?"NL;
+
+
+SoftVer {
+	out "*IDN?";
+	in "%*38c%s";
+	@init { out "*IDN?"; in "%*38c%s";}
+}
+
+
+IdenResult {
+	 out "*IDN?";
+	 in "%(\$1:CavitySimulator:IdenResult.VAL)38c";
+	 @init { out "*IDN?"; in "%(\$1:CavitySimulator:IdenResult.VAL)38c";}
+}
+
+

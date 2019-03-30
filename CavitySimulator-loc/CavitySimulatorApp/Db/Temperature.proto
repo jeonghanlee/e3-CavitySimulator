@@ -1,0 +1,8 @@
+# Protocols for temperature
+
+ExtraInput = Ignore;
+
+InTerminator = NL;
+OutTerminator = NL "*OPC?" NL; 
+
+getTemp { out "MEAS:TEMP:\$1?"; in "%(\$2:CavitySimulator:Temp\$1Result.VAL)f";}

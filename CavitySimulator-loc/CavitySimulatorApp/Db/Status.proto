@@ -1,0 +1,22 @@
+# Status protocols
+
+ExtraInput = Ignore;
+InTerminator = NL;
+OutTerminator  = NL"*OPC?" NL;
+
+
+##########################################################################################
+# Protocols for getting current values
+
+getGateResult{ out "SET:GATE:VM\$1?"; in "%(\$2:CavitySimulator:Gate\$1Result)i";}
+
+getMuxResult{ out "SET:MUX:VM\$1?"; in "%(\$2:CavitySimulator:Mux\$1Result)i";}
+
+#####################################################################################
+# Protocols for sending values
+
+setGate { out "SET:GATE:VM\$1 %(\$2:CavitySimulator:GateButton\$1.VAL)i";
+		@init { out "SET:GATE:VM\$1?"; in "%i";}}
+
+EnumSend { out "SET:MUX:VM\$1 %(\$2:CavitySimulator:EnumVM\$1.VAL)i";
+		@init { out "SET:MUX:VM\$1?"; in "%(\$2:CavitySimulator:EnumVM\$1.VAL)i";}}

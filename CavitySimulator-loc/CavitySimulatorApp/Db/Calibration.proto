@@ -1,0 +1,6 @@
+ExtraInpout = Ignore;
+InTerminator = NL;
+OutTerminator = NL"*OPC?"NL;
+
+calibrate{ out "CAL:VM\$1";}
+

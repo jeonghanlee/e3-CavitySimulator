@@ -1,0 +1,24 @@
+# EEPROM configuration
+
+record(ai, $(USER):CavitySimulator:saveButton){
+	field(SCAN, "Passive")
+	field(FLNK, "$(USER):CavitySimulator:saveToEEPROM")
+}
+
+record(ai, $(USER):CavitySimulator:getButton){	
+	field(SCAN, "Passive")
+	field(FLNK, "$(USER):CavitySimulator:getFromEEPROM")
+}
+
+record(stringout, $(USER):CavitySimulator:saveToEEPROM){
+	field(DTYP, "stream")
+	field(OUT, "@EEPROM.proto save $(PORT)")
+	field(SCAN, "Passive")
+}
+
+record(stringout, $(USER):CavitySimulator:getFromEEPROM){
+	field(DTYP, "stream")
+	field(OUT, "@EEPROM.proto get $(PORT)")
+	field(SCAN, "Passive")
+}
+	
