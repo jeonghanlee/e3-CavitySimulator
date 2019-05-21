@@ -17,11 +17,11 @@ record(stringin, $(USER):CavitySimulator:StringToSendIDN){
 	field(INP, "@Expert.proto ExpertIDNSend($(USER)) $(PORT)")
 }
 
-record(stringin, $(USER):CavitySimulator:StringToSendIDN){
-	field(SCAN, "Passive")
-	field(DTYP, "stream")
-	field(INP, "@Expert.proto ExpertIDNSend($(USER)) $(PORT)")
-}
+#record(stringin, $(USER):CavitySimulator:StringToSendIDN){
+#	field(SCAN, "Passive")
+#	field(DTYP, "stream")
+#	field(INP, "@Expert.proto ExpertIDNSend($(USER)) $(PORT)")
+#}
 
 record(ai, $(USER):CavitySimulator:ExpertIDNButton){
 	field(SCAN, "Passive")

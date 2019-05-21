@@ -1,4 +1,4 @@
-ExtraInpout = Ignore;
+ExtraInput = Ignore;
 InTerminator = NL;
 OutTerminator = NL"*OPC?"NL;
 

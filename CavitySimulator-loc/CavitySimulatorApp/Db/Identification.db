@@ -22,6 +22,6 @@ record(stringin, $(USER):CavitySimulator:SoftVer){
 
 record(stringin, $(USER):CavitySimulator:IdenResult){
 	field(SCAN, "Passive")
-	field(FLNK, "$(USER):CavitySimulator:SoftVer $(PORT)")
+	field(FLNK, "$(USER):CavitySimulator:SoftVer)")
 }
 
