@@ -56,7 +56,7 @@ record(stringout, $(USER):CavitySimulator:CalVM5){
 	field(SCAN, "Passive")
 }
 
-record(ai, $(USER):CavitySimulator:Cal6Button6){
+record(ai, $(USER):CavitySimulator:CalButton6){
 	field(FLNK, "$(USER):CavitySimulator:CalVM6 PP")
 	field(SCAN, "Passive")
 }
