@@ -16,6 +16,7 @@ SYNC_array = ["MODE", "DELAY", "ON", "OFF"]
 AWG_array = ["SIN", "TRAF", "TRAR", "TRAC", "FALL", "RIS", "SQON", "SQOFF", "TRIG", "OUT"]
 AMP_array = ["MODE", "Q", "GAIN"]
 MODEX_array = ["Q", "GAIN", "DETU"]
+PIEZO_array = ["GAIN"]
 
 temp = lvl2
 if temp == "ATT":
@@ -34,3 +35,5 @@ elif "MOD" in temp:
 	WidgetUtil.setItems(display, label_name, MODEX_array)
 elif temp == "AMP":
 	WidgetUtil.setItems(display, label_name, AMP_array)
+elif (temp == "PIEZO1" or temp == "PIEZO2" or temp == "PIEZOO"):
+	WidgetUtil.setItems(display, label_name, PIEZO_array)
