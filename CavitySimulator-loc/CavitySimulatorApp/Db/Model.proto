@@ -1,6 +1,6 @@
 ExtraInput = Ignore;
 InTerminator = NL;
-OutTerminator = NL"*OPC?" NL;
+OutTerminator = NL"*OPC?"NL;
 
 
 #########################################################################################

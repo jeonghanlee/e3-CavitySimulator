@@ -22,5 +22,6 @@ dbLoadRecords("Identification.db", "USER=$(USER), PORT=$(PORT)")
 dbLoadRecords("Expert.db", "USER=$(USER), PORT=$(PORT)")
 dbLoadRecords("Temperature.db", "USER=$(USER), PORT=$(PORT)")
 dbLoadRecords("EEPROM.db", "USER=$(USER), PORT=$(PORT)")
+dbLoadRecords("Piezo.db", "USER=$(USER), PORT=$(PORT)")
 
 iocInit()

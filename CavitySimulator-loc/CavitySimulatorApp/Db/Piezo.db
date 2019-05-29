@@ -1,0 +1,72 @@
+# Piezo and detuning records
+
+
+######################################################################################3
+# Records responsbile for getting current values of piezo
+
+record(ai, $(USER):CavitySimulator:PiezoButton){
+	field(SCAN, "Passive")
+	field(FLNK, "$(USER):CavitySimulator:Piezo1")
+}
+
+record(ai, $(USER):CavitySimulator:Piezo1){
+	field(SCAN, "Passive")
+	field(FLNK, "$(USER):CavitySimulator:Piezo1Result")
+	field(DTYP, "stream")
+	field(INP, "@Piezo.proto getPiezo(1,$(USER)) $(PORT)")
+	field(PINI, "YES")
+}
+
+record(ai, $(USER):CavitySimulator:Piezo1Result){
+	field(SCAN, "Passive")
+	field(FLNK, "$(USER):CavitySimulator:Piezo2")
+}
+
+record(ai, $(USER):CavitySimulator:Piezo2){
+	field(SCAN, "Passive")
+	field(FLNK, "$(USER):CavitySimulator:Piezo2Result")
+	field(DTYP, "stream")
+	field(INP, "@Piezo.proto getPiezo(2,$(USER)) $(PORT)")
+	field(PINI, "YES")
+}
+
+record(ai, $(USER):CavitySimulator:Piezo2Result){
+	field(SCAN, "Passive")
+	field(FLNK, "$(USER):CavitySimulator:PiezoO")
+}
+
+record(ai, $(USER):CavitySimulator:PiezoO){
+	field(SCAN, "Passive")
+	field(FLNK, "$(USER):CavitySimulator:PiezoOResult")
+	field(DTYP, "stream")
+	field(INP, "@Piezo.proto getPiezo(O,$(USER)) $(PORT)")
+	field(PINI, "YES")
+}
+
+record(ai, $(USER):CavitySimulator:PiezoOResult){
+	field(SCAN, "Passive")
+}
+
+#######################################################################33
+# Records responsible for sending new gain values
+
+record(ai, $(USER):CavitySimulator:setPiezo1){
+	field(SCAN, "Passive")
+	field(FLNK, "$(USER):CavitySimulator:Piezo1")
+	field(DTYP, "stream")
+	field(INP, "@Piezo.proto setPiezo(1,$(USER)) $(PORT)")
+}
+
+record(ai, $(USER):CavitySimulator:setPiezo2){
+	field(SCAN, "Passive")
+	field(FLNK, "$(USER):CavitySimulator:Piezo1")
+	field(DTYP, "stream")
+	field(INP, "@Piezo.proto setPiezo(2,$(USER)) $(PORT)")
+}
+
+record(ai, $(USER):CavitySimulator:setPiezoO){
+	field(SCAN, "Passive")
+	field(FLNK, "$(USER):CavitySimulator:Piezo1")
+	field(DTYP, "stream")
+	field(INP, "@Piezo.proto setPiezo(O,$(USER)) $(PORT)")
+}

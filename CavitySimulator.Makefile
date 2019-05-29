@@ -72,6 +72,7 @@ include $(E3_REQUIRE_CONFIG)/DECOUPLE_FLAGS
  TEMPLATES += $(wildcard $(APPDB)/Identification.db)
  TEMPLATES += $(wildcard $(APPDB)/Temperature.db)
  TEMPLATES += $(wildcard $(APPDB)/Model.db)
+ TEMPLATES += $(wildcard $(APPDB)/Piezo.db)
 
 # TEMPLATES += $(wildcard $(APPDB)/*.proto)
 # TEMPLATES += $(wildcard $(APPDB)/*.template)

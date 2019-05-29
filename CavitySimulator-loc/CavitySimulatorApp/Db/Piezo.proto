@@ -1,0 +1,11 @@
+ExtraInput = Ignore;
+InTerminator = NL;
+OutTerminator = NL"*OPC?"NL;
+
+# Protocol for getting values
+
+getPiezo { out "SET:PIEZO\$1:GAIN?"; in "%(\$2:CavitySimulator:Piezo\$1Result.VAL)i";}
+
+# Protocol for setting values
+
+setPiezo { out "SET:PIEZO\$1:GAIN %(\$2:CavitySimulator:setPiezo\$1.VAL)i";}
