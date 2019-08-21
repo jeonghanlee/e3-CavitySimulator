@@ -10,7 +10,7 @@ epicsEnvSet("PORT", "myConnection")
 epicsEnvSet("EPICS_CA_AUTO_ADDR_LIST","NO")
 epicsEnvSet("EPICS_CA_ADDR_LIST","10.1.3.192:5064")
 
-epicsEnvSet("STREAM_PROTOCOL_PATH", "$(CavitySimulator_DIR)")
+epicsEnvSet("STREAM_PROTOCOL_PATH", "$(CavitySimulator_DB)")
 
 drvAsynIPPortConfigure("$(PORT)", "10.1.3.229:7",0,0,0)
 
